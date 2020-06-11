@@ -14,7 +14,7 @@ class Solution:
 		maxPalin = ""
 
 		# Esse loop for controla qual vai ser a primeira letra da substring que vou tentar formar palindromo
-		for i in range(len(s)):
+		for i in range(len(s)): # esse loop executa len(s) vezes
 			#Primeira letra é s[i]
 			currentLen = 1
 
@@ -34,7 +34,7 @@ class Solution:
 				lastIndex = dic[s[i]][-qtyTry] 
 
 				# Enquanto ainda nao encontrou um palindromo aqui e tem mais ocorrencias
-				while(not foundPalindrome):
+				while(not foundPalindrome): # esse loop pode executar no máximo a len(dic[s[i]]) vezes, isto é, a quantidade repetida da letra i
 					# Sempre que tiver um palindromo, existiriam subpalindromos, mas não queremos eles pq são menores que o outro
 					# Também não queremos nem ver os que já aparentam ser menor que algum já encontrado
 
@@ -47,7 +47,7 @@ class Solution:
 						rightIndex = lastIndex - 1
 						foundPalindrome = True # começa considerando que vai dar certo, até provar que não da
 
-						while ((leftIndex <= rightIndex) and foundPalindrome):
+						while ((leftIndex <= rightIndex) and foundPalindrome): # esse loop pode executar no máximo len(s) vezes no pior caso, mas normalmente é menos (lastIndex - i)
 
 							# Se era impar e chegamos no meio, é palindromo!
 							if leftIndex == rightIndex:
