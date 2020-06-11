@@ -44,6 +44,11 @@ class Solution:
 					currentSub += s[i]
 					print(f"{currentSub} ... {currentLen}")
 
+		# last check maxLen 
+		if(currentLen > maxLen):
+			maxLen = currentLen
+			if DEBUG: maxSub = currentSub
+
 		return maxLen
 
 
