@@ -1,6 +1,6 @@
 class Solution: 
 	def longestPalindrome(self, s):
-		print(s)
+		print(f"Original word: {s}")
 		dic = {}
 		# Pré-processamento
 		# Primeiro, armazenar a posicao de cada letra. Obs: já está ordenado por natureza
@@ -11,6 +11,7 @@ class Solution:
 				dic[s[i]] = [i]
 
 		maxLen = 0
+		maxPalin = ""
 
 		# Esse loop for controla qual vai ser a primeira letra da substring que vou tentar formar palindromo
 		for i in range(len(s)):
@@ -68,6 +69,7 @@ class Solution:
 						if foundPalindrome:
 							if currentLen > maxLen:
 								maxLen = currentLen
+								maxPalin = s[i:currentLen+i]
 
 						# Se não achei um palíndromo, vamos tentar com a ocorrencia anterior da letra
 						else:
@@ -88,12 +90,13 @@ class Solution:
 		# Se não encontrou palindromo mesmo, então o tamanho máximo desse 'palindromo' é 1
 		if (maxLen == 0) and (len(s) > 0):
 			maxLen = 1 # pelo menos tem 1 letra
+			maxPalin = s[0]
 
-		return maxLen
+		return maxPalin
 		
 
 # Test program
 s = "tracecars"
 # s = "abaora"
-print(str(Solution().longestPalindrome(s)))
+print(f"Max palindrome: {str(Solution().longestPalindrome(s))}")
 
