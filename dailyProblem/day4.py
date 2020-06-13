@@ -3,17 +3,20 @@ class Solution:
 
 		first = -1
 		last = -1
-		for i in range(len(arr)):
-			if arr[i] == target:
-				first = i
-				break
+		qty = arr.count(target)
 
-		if first != -1:
-			for i in range(len(arr)-1,0,-1):
+		if(qty > 0):
+			for i in range(len(arr)):
 				if arr[i] == target:
-					last = i
+					first = i
 					break
-		
+
+			if(qty > 1):
+				for i in range(len(arr)-1,0,-1):
+					if arr[i] == target:
+						last = i
+						break
+			
 
 		return [first,last]
     # Fill this in.
