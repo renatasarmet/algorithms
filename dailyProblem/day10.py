@@ -6,15 +6,17 @@ class Node:
 
 
 def findCeilingFloor(root_node, k, floor=None, ceil=None):
-	if root_node.value == k:
+	if not root_node:
+		return (None, None)
+	elif root_node.value == k:
 		return (root_node.value, root_node.value)
 	elif root_node.value > k:
-		if(root_node.left):
+		if root_node.left:
 			return(findCeilingFloor(root_node.left, k, floor=root_node.value, ceil=root_node.value))
 		else:
 			return(floor,root_node.value)
 	else:
-		if(root_node.right):
+		if root_node.right:
 			return(findCeilingFloor(root_node.right, k, floor=root_node.value, ceil=root_node.value))
 		else:
 			return(root_node.value,ceil)
