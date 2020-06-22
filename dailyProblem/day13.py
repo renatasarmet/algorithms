@@ -15,7 +15,7 @@ def staircase(n):
 	number_of_ones = n
 	number_of_twos = 0
 
-	# each iteration, try inseting one more case of number 2
+	# at each iteration, try inserting one more case of number 2
 	while number_of_ones > 1:
 		number_of_ones -= 2
 		number_of_twos += 1
