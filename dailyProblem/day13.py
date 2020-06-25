@@ -1,3 +1,4 @@
+# Todo: salvar o fatorial anterior pra nao ter que ficar recalculando
 def fatorial(number):	
 	fat = 1
 	while number > 1:
