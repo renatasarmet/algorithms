@@ -20,19 +20,14 @@ class Node:
 		return answer
 		
 
-def getNodeMid(nums):
+def createBalancedBST(nums):
 	size = len(nums)
 	if size == 0:
 		return None
 
 	mid = len(nums) // 2
 
-	return Node(nums[mid], getNodeMid(nums[:mid]), getNodeMid(nums[mid+1:]))
-
-
-def createBalancedBST(nums):
-	nums.sort()
-	return getNodeMid(nums)
+	return Node(nums[mid], createBalancedBST(nums[:mid]), createBalancedBST(nums[mid+1:]))
 
 
 print(createBalancedBST([1, 2, 3, 4, 5, 6, 7]))
