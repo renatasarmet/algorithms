@@ -8,7 +8,7 @@ import copy
 class Matrix:
 
     # It is a squared matrix
-    def __init__(self, value=[[]]):
+    def __init__(self, value=[]):
         self.value = value
         self.size = len(value)
 
