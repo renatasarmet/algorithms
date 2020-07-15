@@ -19,7 +19,7 @@ class Queue:
 
 	def dequeue(self):
 		# Usual dequeue
-		return self.main_stack.pop()
+		return self.main_stack.pop() if self.main_stack else None
 
 
 q = Queue()
