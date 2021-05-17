@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define MAX 1001
+#define MAX 30
 
 #define WITH_DEPTH true
 #define H_MANHATTAN true
@@ -47,32 +47,24 @@ struct CompareState {
     	// g = distance from initial (depth if WITH_DEPTH == true else always 0)
     	int g1, g2, h1, h2, f1, f2;
 
-    	// cout << "WITH_DEPTH" << WITH_DEPTH << endl;
-    	// cout << "H_MANHATTAN" << H_MANHATTAN << endl;
+    	if(WITH_DEPTH){
+    		g1 = s1.depth;
+    		g2 = s2.depth;
+    	}
+    	else{
+    		g1 = 0;
+    		g2 = 0;
+    	}
 
-    	g1 = 0;
-    	g2 = 0;
-    	h1 = h_manhattan(s1);
-    	h2 = h_manhattan(s2);
-
-    	// if(WITH_DEPTH){
-    	// 	g1 = s1.depth;
-    	// 	g2 = s2.depth;
-    	// }
-    	// else{
-    	// 	g1 = 0;
-    	// 	g2 = 0;
-    	// }
-
-    	// // h = manhattan distance or euclidean distance
-    	// if(H_MANHATTAN){
-    	// 	h1 = h_manhattan(s1);
-    	// 	h2 = h_manhattan(s2);
-    	// }
-    	// else{
-    	// 	h1 = h_euclidiana(s1);
-    	// 	h2 = h_euclidiana(s2);
-    	// }
+    	// h = manhattan distance or euclidean distance
+    	if(H_MANHATTAN){
+    		h1 = h_manhattan(s1);
+    		h2 = h_manhattan(s2);
+    	}
+    	else{
+    		h1 = h_euclidiana(s1);
+    		h2 = h_euclidiana(s2);
+    	}
 
 		// f = g + h
     	f1 = g1 + h1;
