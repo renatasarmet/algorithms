@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     if len(sys.argv) > 1:
         size = int(sys.argv[1].strip())
-        file_name = f'test_cases/input_maze_{size}.in'
+        file_name = f'input_maze_{size}.in'
         file = open(file_name,'w')
 
         maze = np.zeros((size,size),dtype=np.uint8)
