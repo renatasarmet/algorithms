@@ -6,7 +6,7 @@
 
 using namespace std;
 
-#define MAX 30
+#define MAX 510
 
 #define WITH_DEPTH true
 #define H_MANHATTAN true
