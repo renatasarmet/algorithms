@@ -27,7 +27,7 @@ def coinRECPD(v, current_i):
 		return MEMO[v]
 
 	MEMO[v] = 0
-	for i in range(current_i,MAX): # it is important start in current_i to tell that order does not matter
+	for i in range(current_i,MAX): 
 		if (v >= available_coins[i]):
 
 			way = coinRECPD(v-available_coins[i], i)
@@ -43,7 +43,7 @@ def coinPD(V):
 	for v in range(1,V+1):
 		print("VAMOS COM v = ", v, "MEMO = ", MEMO)
 		MEMO[v] = 0
-		for i in range(MAX): # it is important start in j to tell that order does not matter
+		for i in range(MAX): 
 			print(f"para i = {i} coint = {available_coins[i]}, MEMO = ", MEMO)
 			if (v >= available_coins[i]):
 				print("v >= available_coins ...")
