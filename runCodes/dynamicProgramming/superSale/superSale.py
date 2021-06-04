@@ -1,4 +1,5 @@
 def saleREC(v, current_i):
+	# print("--- temos v = ", v)
 	if (v == 0):
 		return 0
 
@@ -6,7 +7,47 @@ def saleREC(v, current_i):
 	for i in range(current_i, N): # for every item
 		if (v >= weights[i]):
 			best_strategy = max(prices[i]+saleREC(v-weights[i], i+1), best_strategy)
+	
+	# print(f"para v {v} tenho {best_strategy}")
 	return best_strategy
+
+
+# def saleRECPD(v, current_i):
+# 	print("--- temos v = ", v)
+# 	if (v == 0):
+# 		return 0
+
+# 	if MEMO[v] != -1: # we already calculated it
+# 		print(f"sim ja calculei para v {v} com MEMO = {MEMO[v]} ")
+# 		return MEMO[v]
+
+# 	MEMO[v] = 0
+# 	for i in range(current_i, N): # for every item
+# 		if (v >= weights[i]):
+# 			MEMO[v] = max(prices[i]+saleRECPD(v-weights[i], i+1), MEMO[v])
+	
+# 	print(f"para v {v} tenho {MEMO[v]}")
+# 	return MEMO[v]
+
+
+# def saleRECPD(v, current_i):
+# 	print("--- temos v = ", v)
+# 	if (v == 0):
+# 		return 0
+
+# 	if MEMO[v] != -1: # we already calculated it
+# 		print(f"sim ja calculei para v {v} com MEMO = {MEMO[v]} ")
+# 		return MEMO[v]
+
+# 	best_strategy = 0
+# 	for i in range(current_i, N): # for every item
+# 		if (v >= weights[i]):
+# 			best_strategy = max(prices[i]+saleRECPD(v-weights[i], i+1), best_strategy)
+	
+# 	MEMO[v] = best_strategy
+# 	print(f"para v {v} tenho {MEMO[v]}")
+# 	return best_strategy
+
 
 
 # def coinRECPD(v, current_i):
@@ -66,12 +107,15 @@ for t in range(T):
 	total_value = 0
 	# for each person
 	for g in range(G):
-		total_value += saleREC(max_weight[g],0)
 
-	# MEMO = [-1] * (cents+1)
-	# MEMO[0] = 1
-	# print(MEMO)
-	# print(coinRECPD(cents,0))
+		g_value = saleREC(max_weight[g],0)
+
+		# MEMO = [-1] * (max_weight[g]+1)
+		# g_value = saleRECPD(max_weight[g],0)
+		# print("----------------------- g_value = ", g_value)
+
+		total_value += g_value
+
 
 	# MEMO = [-1] * (cents+1)
 	# MEMO[0] = 1
