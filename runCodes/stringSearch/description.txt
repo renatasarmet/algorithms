@@ -1,0 +1,25 @@
+Seja um texto de tamanho N (1<= N <= 260000) caracteres. Seja um padrão de tamanho N (1<= N <= 2000). Seu objetivo é identificar todas as ocorrências do padrão no texto. Implemente o algoritmo KMP, que tem maior eficiência que a busca 'naive'..
+
+Input
+
+Cada input contém 2 linhas (podem ser bastante longas) a primeira linha corresponde ao texto e a segunda linha o padrão
+
+Saída
+
+Para cada caso de teste imprima uma linha com os seguintes dizeres:
+
+O padrao foi encontrado na posicao X, onde X é o i-ésimo caracter no texto, que começa com índice 0.
+
+Exemplo:
+
+Entrada
+
+I DO NOT LIKE SEVENTY SEV BUT SEVENTY SEVENTY SEVEN
+
+SEVENTY SEVEN
+
+Saída
+
+O padrao foi encontrado na posicao 30
+
+O padrao foi encontrado na posicao 38
