@@ -49,14 +49,16 @@ class Trie:
 
 		while len(bfs_queue) > 0:
 			current_node = bfs_queue.popleft()
+			# print("--------CURRENT node ", current_node.value)
 
 			for node in current_node.children:
-				# print('next index = ', next_index)
+				# print('\nnext index = ', next_index)
 
 				# print("looking at node ", node.value)
 				if node.value == '.':  			#   found a word
 					found_words.extend(node.words)
 					# print("I found some words! ", node.words)
+					# print("found_words is now = ", found_words)
 					
 				if next_index >= len(phoneNumber):
 					break
@@ -66,7 +68,6 @@ class Trie:
 				if node.value == phoneNumber[next_index]:
 					next_index += 1
 					bfs_queue.append(node)
-					break # there is just one possible value
 
 		return found_words
 
