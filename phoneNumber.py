@@ -53,10 +53,10 @@ class Trie:
 			for node in current_node.children:
 				# print('next index = ', next_index)
 
-				# print("olhando o node ", node.value)
+				# print("looking at node ", node.value)
 				if node.value == '.':  			#   found a word
 					found_words.extend(node.words)
-					# print("achei essas palavras! ", node.words)
+					# print("I found some words! ", node.words)
 					
 				if next_index >= len(phoneNumber):
 					break
@@ -92,10 +92,14 @@ class Trie:
 
 
 def buildHashTable( ): 		#  keys: letters, values: corresponding number
-	map_letters = {'a': '2', 'b': '2', 'c': '2', 'd': '3', 'e': '3', 'f': '3', 
-					'g': '4', 'h': '4', 'i': '4', 'j': '5', 'k': '5', 'l': '5',
-					 'm': '6', 'n': '6', 'o': '6', 'p': '7', 'q': '7', 'r': '7', 's': '7',
-					't': '8', 'u': '8', 'v': '8', 'w': '9', 'x': '9', 'y': '9', 'z': '9'}
+	map_letters = {'a': '2', 'b': '2', 'c': '2', 
+					'd': '3', 'e': '3', 'f': '3', 
+					'g': '4', 'h': '4', 'i': '4', 
+					'j': '5', 'k': '5', 'l': '5',
+					'm': '6', 'n': '6', 'o': '6', 
+					'p': '7', 'q': '7', 'r': '7', 's': '7',
+					't': '8', 'u': '8', 'v': '8', 
+					'w': '9', 'x': '9', 'y': '9', 'z': '9'}
 	return map_letters
 					
 
