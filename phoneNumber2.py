@@ -30,8 +30,7 @@ def findSubstrings(phoneNumber, words):
 	found_words = [] 
 
 	for i in range(len(digits)):
-		exists = phoneNumber.find(digits[i])
-		if exists != -1:
+		if digits[i] in phoneNumber:
 			found_words.append(words[i])
 
 	return found_words
