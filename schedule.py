@@ -49,7 +49,7 @@ def join_schedules(schedule1, schedule2):
 	c1 = 0
 	c2 = 0
 
-	while (c1 < size1) or (c2 < size2): 
+	while (c1 < size1) and (c2 < size2): 
 
 		diff_time = compare_times(schedule1[c1][0], schedule2[c2][0])
 		if diff_time <= 0: # s1 starts before s2
@@ -59,15 +59,13 @@ def join_schedules(schedule1, schedule2):
 
 		union_schedules.append([first_time, last_time])
 
-		if c1 >= size1: # if c1 is over, just append whats is left in c2 to union_schedules
-			for i in range(c2, size2):
-				union_schedules.append(schedule2[i])
-			break
+	if c1 >= size1: # if c1 is over, just append whats is left in c2 to union_schedules
+		for i in range(c2, size2):
+			union_schedules.append(schedule2[i])
 
-		if c2 >= size2: # if c2 is over, just append whats is left in c1 to union_schedules
-			for i in range(c1, size1):
-				union_schedules.append(schedule1[i])
-			break
+	if c2 >= size2: # if c2 is over, just append whats is left in c1 to union_schedules
+		for i in range(c1, size1):
+			union_schedules.append(schedule1[i])
 
 	return union_schedules
 
