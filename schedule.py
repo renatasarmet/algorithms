@@ -164,19 +164,19 @@ def find_available_time(duration, schedule1, daily_bound1, schedule2, daily_boun
 	print()
 
 	## Join schedule1 and schedule2
-	union_schedules = join_schedules(schedule1, schedule2)
+	union_schedules = join_schedules(schedule1, schedule2) 		# O(size1 + size2)
 	print("All busy time together:")
 	print(union_schedules)
 	print()
 
 	## Clean daily bound as meetings
-	clean_daily_bounds(union_schedules, daily_bound1, daily_bound2)
+	clean_daily_bounds(union_schedules, daily_bound1, daily_bound2)		# O(size1 + size2)
 	print("All busy time together cleaned respecting daily bounds:")
 	print(union_schedules)
 	print()
 
 	# Get the available slots
-	slots = get_available_slots(duration, union_schedules, daily_bound1, daily_bound2)
+	slots = get_available_slots(duration, union_schedules, daily_bound1, daily_bound2)	# O(size1 + size2)
 	print("All available slots:")
 	print(slots)
 
@@ -194,7 +194,7 @@ if __name__ == "__main__":
 
 	### union_schedules = [['9:00', '11:30'], ['12:00', '14:30'], ['14:30', '15:00'],  ['16:00', '18:00']]
 
-	output = find_available_time(duration, schedule1, daily_bound1, schedule2, daily_bound2)
+	output = find_available_time(duration, schedule1, daily_bound1, schedule2, daily_bound2)		# O(size1 + size2)
 	# print(output)
 
 	# output = [['11:30', '12:00'], ['15:00', '16:00'], ['18:00', '18:30']]
